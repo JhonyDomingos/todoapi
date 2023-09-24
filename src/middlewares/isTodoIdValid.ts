@@ -11,11 +11,7 @@ export const isTodoValid = (
     return res.status(404).json({ message: "Not found any todo with this id" });
   }
 
+  res.locals.foundTodo = foundTodo; // res.locals.nomedavariavelquequerimportar = nome da variavel
 
-  res.locals.foundTodo = foundTodo // res.locals.nomedavariavelquequerimportar = nome da variavel
-
-
-  return next()
-
-
+  return next();
 };
