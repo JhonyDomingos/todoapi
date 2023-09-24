@@ -1,4 +1,4 @@
 export const editTodoValidation = {
-    title:"required",
-    content: "required"
-}
+  title: "required",
+  content: "required",
+};

@@ -1,5 +1,11 @@
 import express from "express";
-import { createTodo, deleteTodo, getToDos, getTodosByID, updateTodos } from "./logic";
+import {
+  createTodo,
+  deleteTodo,
+  getToDos,
+  getTodosByID,
+  updateTodos,
+} from "./logic";
 import { validation } from "./middlewares/validations";
 import { createTodoValidation } from "./schemas/createTodoValidations";
 import { isTodoValid } from "./middlewares/isTodoIdValid";
@@ -13,7 +19,7 @@ app.get("/", getToDos);
 app.get("/:todoId", isTodoValid, getTodosByID);
 app.post("/", validation(createTodoValidation), createTodo);
 app.delete("/:todoId", isTodoValid, deleteTodo);
-app.put("/:todoId", validation(editTodoValidation),isTodoValid, updateTodos );
+app.put("/:todoId", validation(editTodoValidation), isTodoValid, updateTodos);
 
 const PORT = 3000;
 
